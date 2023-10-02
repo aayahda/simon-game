@@ -2,12 +2,15 @@ var gamePattern=[];
 var buttonColors=["red","blue","green","yellow"]
 
 function nextSequence(){
-    randomNumber=Math.floor(Math.random()*4);
-    return randomNumber;
+    var randomNumber=Math.floor(Math.random()*4);
+    var randomChosenColor=buttonColors[randomNumber];
+    gamePattern.push(randomChosenColor);
+    $("#"+randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
+    var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+    audio.play();
+
 }
 
-var randomChosenColor=buttonColors[nextSequence()];
-console.log(randomChosenColor);
-gamePattern.push(randomChosenColor);
 
-console.log(gamePattern);
+
+
